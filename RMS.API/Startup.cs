@@ -12,6 +12,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using BLL;
+using BLL.IBLL;
+using BLL.WBLL;
+using DAL;
+using DAL.IDAL;
+using DAL.WDAL;
 namespace RMS.API
 {
     public class Startup
@@ -32,7 +38,13 @@ namespace RMS.API
              {
                  configure.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter());
              });
-            //services.AddTransient<,>();
+            //×¢²á
+            services.AddTransient<IDenLuDAL, DenLuDAL>();  
+            services.AddTransient<IDenLuBLL, DenLuBLL>();
+            services.AddTransient<IHotelDAL, HotelDAL>();
+            services.AddTransient<IHotelBLL, HotelBLL>();
+            services.AddTransient<IDenLukehuDAL, DenLukehuDAL>();
+            services.AddTransient<IDenLukehuBLL, DenLukehuBLL>();
             //¿çÓò
             services.AddCors(options =>options.AddPolicy("cor",p => p.AllowAnyOrigin()));
 

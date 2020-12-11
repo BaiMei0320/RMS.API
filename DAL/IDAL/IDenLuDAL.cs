@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.IDAL
 {
-    interface IDenLuDAL
+    public interface IDenLuDAL
     {
         //店家 Merchants  登录 注册
         #region

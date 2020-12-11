@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -45,8 +45,9 @@ namespace DAL
 　　　　{
 　　　　　　try
 　　　　　　{
-　　　　　　　　IJwtDecoder decoder = new JwtDecoder(serializer,validator, urlEncoder, algorithm); // 创建解密工具
-　　　　　　　　var json = decoder.Decode(token, Key, verify: true);//token 中的载体的 JSON 格式字符串
+　　　　　　　　IJwtDecoder decoder = new JwtDecoder(serializer,validator, urlEncoder, algorithm); // 创建解密工具  
+                //Jwt.例外.无效令牌零例外："令牌必须由3个由点部分分隔。
+                var json = decoder.Decode(token, Key, verify: true);//token 中的载体的 JSON 格式字符串
 　　　　　　　　return json; // payload
 　　　　　　}
 　　　　　　catch (TokenExpiredException)

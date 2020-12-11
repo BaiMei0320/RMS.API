@@ -11,7 +11,7 @@ namespace RMS.API
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)//无效操作例外：检测到类型的服务存在循环依赖项
         {
             CreateHostBuilder(args).Build().Run();
         }

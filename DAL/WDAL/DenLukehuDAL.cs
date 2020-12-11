@@ -65,7 +65,7 @@ namespace DAL.WDAL
             pairs.Add("userpass", model.MembersPassword);
             //调用加密方法
             var str = helper.GetToken(pairs, 10000);
-            string sql = $"insert into Userd values('{model.MembersAccount}','{str}','{model.MembersID}')";
+            string sql = $"insert into Members values('{model.MembersAccount}','{str}','{model.MembersID}')";
             using (SqlConnection connection = new SqlConnection(conStr))
             {
                 return connection.Execute(sql);

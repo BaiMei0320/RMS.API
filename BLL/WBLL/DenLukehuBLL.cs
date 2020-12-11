@@ -1,4 +1,5 @@
 ﻿using BLL.IBLL;
+using DAL.IDAL;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -8,19 +9,28 @@ namespace BLL.WBLL
 {
     public class DenLukehuBLL : IDenLukehuBLL
     {
-        public MembersModel MembersLogin(string Account)
+        //依赖注入
+        private IDenLukehuDAL _idal;
+        public DenLukehuBLL(IDenLukehuDAL dal)
         {
-            throw new NotImplementedException();
+            _idal = dal;
+        }
+        //客户 Members  登录注册
+        #region
+        public MembersModel MembersLogin(string account, string password)
+        {
+            return _idal.MembersLogin(account, password);
         }
 
-        public string MembersPass(string Account)
+        public string MembersPass(string account)
         {
-            throw new NotImplementedException();
+            return _idal.MembersPass(account);
         }
 
-        public int MembersZhuChe(MembersModel Model)
+        public int MembersZhuChe(MembersModel model)
         {
-            throw new NotImplementedException();
+            return _idal.MembersZhuChe(model);
         }
+        #endregion
     }
 }

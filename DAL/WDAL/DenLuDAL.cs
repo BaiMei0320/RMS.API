@@ -35,7 +35,7 @@ namespace DAL.WDAL
             {
 
                 MerchantsModel model = connection.Query<MerchantsModel>(sql).ToList().FirstOrDefault();
-                //解密密码
+                //解密密码  对象引用未设置为对象的实例。
                 string code = helper.GetPayload(model.MerchantsPassword);
                 JwtModel jwt = JsonConvert.DeserializeObject<JwtModel>(code);
                 string str = jwt.userpass;
@@ -65,7 +65,7 @@ namespace DAL.WDAL
             pairs.Add("userpass", model.MerchantsPassword);
             //调用加密方法
             var str = helper.GetToken(pairs, 10000);
-            string sql = $"insert into Userd values('{model.MerchantsAccount}','{str}','{model.MerchantsID}')";
+            string sql = $"insert into Merchants values('{model.MerchantsAccount}','{str}','{model.MerchantsID}')";
             using (SqlConnection connection = new SqlConnection(conStr))
             {
                 return connection.Execute(sql);
