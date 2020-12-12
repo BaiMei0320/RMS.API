@@ -28,7 +28,7 @@ namespace RMS.API.Controllers
         //商店管理 Merchants
         #region
 
-        //反填商品
+        //反填商店 
         [Route("MerchantsFan")]
         [HttpGet]
         public MerchantsModel MerchantsFan(int id)
@@ -36,7 +36,7 @@ namespace RMS.API.Controllers
             return _ibll.MerchantsFan(id);
         }
 
-        //修改商品
+        //修改商店
         [Route("MerchantsUpdate")]
         [HttpGet]
         public int MerchantsUpdate(string ff = "")
@@ -59,7 +59,7 @@ namespace RMS.API.Controllers
             return _ibll.MerchantsUpdate(model);
         }
 
-        //显示商品
+        //显示商店
         [Route("MerchantsShow")]
         [HttpGet]
         public List<MerchantsModel> MerchantsShow()

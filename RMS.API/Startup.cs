@@ -43,6 +43,10 @@ namespace RMS.API
             services.AddTransient<IDenLuBLL, DenLuBLL>();
             services.AddTransient<IHotelDAL, HotelDAL>();
             services.AddTransient<IHotelBLL, HotelBLL>();
+            services.AddTransient<IOrdersDAL, OrdersDAL>();
+            services.AddTransient<IOrdersBLL, OrdersBLL>();
+            services.AddTransient<IMemberDAL, MemberDAL>();
+            services.AddTransient<IMemberBLL, MemberBLL>();
             services.AddTransient<IDenLukehuDAL, DenLukehuDAL>();
             services.AddTransient<IDenLukehuBLL, DenLukehuBLL>();
             //øÁ”Ú

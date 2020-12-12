@@ -21,6 +21,8 @@
 ,('AS373','林教头','13453405669','123456','0351698','中国战略大学','1246')
 ,('AS374','孙三娘','15874305659','123456','0351699','中国军工大学','5566')
 ,('AS375','武大郎','13315453549','123456','0351710','中国研发大学','1526')
+select * from Members
+select * from Members m join MembersMessage mm on mm.MembersMessageID = m.MembersID where m.MembersID = 5
  --会员信息表
   create table MembersMessage
 (
@@ -223,7 +225,7 @@ create table TwoTeceipts
 	OneTeceiptsID	        int,								  --主表id
 	CuisinesID              int,								  --菜品id
     TwoTeceiptsNum			int,							      --数量
-	TwoTeceiptsState        int                                   --0 未操作  1已入库  2已退货
+	TwoTeceiptsState        int                                   --0 未操作  1已入库  2已退货 判断是否到货
 )
 insert into TwoTeceipts values
  ('1','1','10','0')

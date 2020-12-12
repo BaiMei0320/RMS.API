@@ -11,5 +11,7 @@ namespace Model
         public string   OneTeceiptsCode  { get; set; }//订单编号
         public DateTime OneTeceiptsTime  { get; set; }//订单时间 
         public int      OneTeceiptsState { get; set; }//订单状态
+        public string   Gids             { get; set; }
+        public string   Nums             { get; set; }
     }
 }
